@@ -1,0 +1,17 @@
+services:
+  vue:
+    container_name: vue
+    build:
+      context: .
+      dockerfile: dockerfile
+    restart: always
+    ports:
+      - 8800:8800
+    volumes:
+      - ../vue:/workspace
+    environment:
+      - PORT=8800
+      - TZ=Asia/Seoul
+      - LC_ALL:en_US.UTF-8
+    command: sleep infinity
+
